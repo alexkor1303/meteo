@@ -16,7 +16,6 @@ export async function getGeoData() {
     return;
   }
   cityName = replaceAbbreviation(cityName);
-  console.log(cityName);
   try {
     const geoUrl = `${baseUrl}/geo/1.0/direct`;
     const queryParams = new URLSearchParams({
@@ -24,6 +23,7 @@ export async function getGeoData() {
       limit: 1,
       appid: apikey,
     });
+    console.log(queryParams.toString());
     const response = await fetch(`${geoUrl}?${queryParams.toString()}`);
     if (!response.ok) {
       throw new Error(`Город не найден, статус ответа :${response.status}`);
@@ -35,7 +35,5 @@ export async function getGeoData() {
   } catch (error) {
     showError(`Данные не получены`);
     console.error(`Ошибка при получении геопозиции города : ${error.message}`);
-  } finally {
-    cityInput.value = "";
   }
 }
