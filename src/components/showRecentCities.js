@@ -2,11 +2,6 @@ import { getGeoData } from "../api/geoData.js";
 import { cityInput } from "./index.js";
 
 const recentCitiesList = document.getElementById("recent-cities-list");
-cityInput.addEventListener("blur", (e) => {
-  if (e.target !== cityInput && e.target !== recentCitiesList) {
-    recentCitiesList.style.display = "none";
-  }
-});
 
 export const showRecentCities = () => {
   recentCitiesList.innerHTML = "";
@@ -27,3 +22,17 @@ export const showRecentCities = () => {
   });
   recentCitiesList.style.display = "block";
 };
+
+cityInput.addEventListener("blur", () => {
+  setTimeout(() => {
+    recentCitiesList.style.display = "none";
+  }, 150);
+
+  cityInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      getGeoData();
+      recentCitiesList.style.display = "none";
+    }
+  });
+});

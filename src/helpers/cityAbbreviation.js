@@ -1,9 +1,11 @@
 export const replaceAbbreviation = (cityName) => {
   const lowerCaseCity = cityName.toLowerCase();
+  const capitalaizedCity = lowerCaseCity[0].toUpperCase() + cityName.slice(1);
+
   if (cityAbbreviation[lowerCaseCity]) {
     return cityAbbreviation[lowerCaseCity];
   }
-  return lowerCaseCity;
+  return capitalaizedCity;
 };
 
 const cityAbbreviation = {

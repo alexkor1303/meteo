@@ -114,6 +114,7 @@
 }
 
 .stat-item .parameter {
+  transition: all 0.5s ease-in-out;
   border-radius: 6px;
   background-color: #3b6680;
   height: 6px;
@@ -228,4 +229,7 @@
   .day-length {
     font-size: 0.9rem;
   }
+}
+#wind-direction-icon {
+  transition: transform 0.5s ease-in-out;
 }

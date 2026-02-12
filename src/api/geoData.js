@@ -1,5 +1,10 @@
 import { baseUrl, apikey } from "./ApiKeyAndHost.js";
-import { cityInput, showError } from "../components/index.js";
+import { getWeatherData, getForecastData } from "./getWeatherAndForecast.js";
+import {
+  cityInput,
+  showError,
+  renderCurrentWeather,
+} from "../components/index.js";
 import {
   isCyrillic,
   replaceAbbreviation,
@@ -23,15 +28,17 @@ export async function getGeoData() {
       limit: 1,
       appid: apikey,
     });
-    console.log(queryParams.toString());
     const response = await fetch(`${geoUrl}?${queryParams.toString()}`);
-    if (!response.ok) {
-      throw new Error(`Город не найден, статус ответа :${response.status}`);
-    }
     const data = await response.json();
+    if (!response.ok || !data.length) {
+      throw new Error(`Город не найден, статус ответа : ${response.status}`);
+    }
     const { lon, lat } = data[0];
     saveCityToLocalStorage(cityName);
-    console.log(lon, lat);
+   
+    const weatherData = await getWeatherData(lat, lon);
+    const forecastData = await getForecastData(lat, lon);
+    renderCurrentWeather(weatherData, cityName);
   } catch (error) {
     showError(`Данные не получены`);
     console.error(`Ошибка при получении геопозиции города : ${error.message}`);
