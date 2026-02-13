@@ -21,7 +21,7 @@ export const geolocation = () => {
       await fetchWeatherByCoords(latitude, longitude, locationName);
       console.log(latitude, longitude);
     } catch (error) {
-      console.error(error.message);
+      console.error(`Ошибка при получении геолокации : ${error.message}`);
     }
   });
 };

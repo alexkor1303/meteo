@@ -44,7 +44,7 @@ main {
 
 /* Дополнительные стили*/
 #error-message {
-  color: red;
+  color: rgb(252, 121, 121);
   font-size: 1.2rem;
   margin-top: 5px;
 }

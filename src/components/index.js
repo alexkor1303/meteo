@@ -6,3 +6,4 @@ export * from "./currentWeather.js";
 export * from "./hourlyForecast.js";
 export * from "./dailyForecast.js";
 export * from "./geolocation.js";
+export * from "./scrollToTop.js";
