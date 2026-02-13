@@ -4,7 +4,10 @@ import {
   cityInput,
   showError,
   renderCurrentWeather,
+  renderHourlyForecast,
+  renderDailyForecast,
 } from "../components/index.js";
+
 import {
   isCyrillic,
   replaceAbbreviation,
@@ -35,10 +38,13 @@ export async function getGeoData() {
     }
     const { lon, lat } = data[0];
     saveCityToLocalStorage(cityName);
-   
+
     const weatherData = await getWeatherData(lat, lon);
     const forecastData = await getForecastData(lat, lon);
+    console.log(forecastData);
     renderCurrentWeather(weatherData, cityName);
+    renderHourlyForecast(forecastData);
+    renderDailyForecast(forecastData);
   } catch (error) {
     showError(`Данные не получены`);
     console.error(`Ошибка при получении геопозиции города : ${error.message}`);

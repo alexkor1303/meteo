@@ -1,4 +1,10 @@
-import { setSunInfo, updateWindDirection } from "../helpers/index.js";
+import {
+  setSunInfo,
+  updateWindDirection,
+  calculateSunPosition,
+  updateSunPosition,
+  renderCurrentTime,
+} from "../helpers/index.js";
 const currentCity = document.querySelector(".city");
 const currentTemperature = document.querySelector(".temperature");
 const feelsLike = document.querySelector(".feels");
@@ -37,6 +43,11 @@ export const renderCurrentWeather = (weatherData, city) => {
     weatherData.sys.sunset,
     weatherData.timezone,
   );
-
+  const sunPosition = calculateSunPosition(
+    weatherData.sys.sunrise,
+    weatherData.sys.sunset,
+  );
+  updateSunPosition(sunPosition);
+  renderCurrentTime();
   console.log(weatherData);
 };
