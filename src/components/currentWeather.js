@@ -3,7 +3,6 @@ import {
   updateWindDirection,
   calculateSunPosition,
   updateSunPosition,
-  renderCurrentTime,
 } from "../helpers/index.js";
 const currentCity = document.querySelector(".city");
 const currentTemperature = document.querySelector(".temperature");
@@ -48,6 +47,5 @@ export const renderCurrentWeather = (weatherData, city) => {
     weatherData.sys.sunset,
   );
   updateSunPosition(sunPosition);
-  renderCurrentTime();
   console.log(weatherData);
 };

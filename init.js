@@ -1,8 +1,15 @@
 import { getGeoData } from "./src/api/geoData.js";
-import { switchTheme, getWeatherByForm } from "./src/components/index.js";
+import {
+  switchTheme,
+  getWeatherByForm,
+  geolocation,
+} from "./src/components/index.js";
+import { renderCurrentTime } from "./src/helpers/index.js";
 
 export function initApp() {
   switchTheme();
+  getGeoData();
   getWeatherByForm();
-  // getGeoData();
+  renderCurrentTime();
+  geolocation();
 }

@@ -5,3 +5,4 @@ export * from "./showRecentCities.js";
 export * from "./currentWeather.js";
 export * from "./hourlyForecast.js";
 export * from "./dailyForecast.js";
+export * from "./geolocation.js";
