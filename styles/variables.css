@@ -16,7 +16,7 @@
   --bg-indicate: #64b5f6;
   --left-position: 5px;
   --rotate-angle: 0deg;
-  --background-image: url("../public/img/clouds.jpg"); 
+  --background-image: url("../public/img/clouds.jpg");
 }
 
 :root[data-theme="dark"] {
@@ -27,13 +27,13 @@
   --bg-input: #062839;
   --input-border: #1b87cf;
   --input-text: #8d8d8d;
-  --bg-btn: #0c4a69;
-  --bg-btn-hover: #09364d;
+  --bg-btn: #ec6e4d;
+  --bg-btn-hover: #ec6d4d96;
   --text-feels: #5d5d5d;
   --scroll-color: #3b6680;
   --bg-footer: #011c2a;
   --bg-indicate: #ec6e4d;
   --left-position: 35px;
   --rotate-angle: 360deg;
-  --background-image: url("../public/img/space.jpg"); 
+  --background-image: url("../public/img/space.jpg");
 }

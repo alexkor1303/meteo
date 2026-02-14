@@ -57,8 +57,8 @@ async function geolocationName(lat, lon) {
     const response = await fetch(url);
     const data = await response.json();
     if (data && data.length > 0) {
-      const { local_names } = data[0];
-      const russianName = local_names?.ru || data[0].name;
+      const { localNames } = data[0];
+      const russianName = localNames?.ru || data[0].name;
       return `${russianName}`;
     } else {
       throw new Error("Название места не найдено");
