@@ -4,8 +4,9 @@
   "description": "",
   "main": "./src/main.js",
   "scripts": {
-    "build": "SET NODE_ENV=production && webpack",
     "start": "webpack-dev-server --open",
+    "dev": "SET NODE_ENV=development && webpack",
+    "build": "SET NODE_ENV=production && webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write ./src",
     "lint:js": "eslint",
@@ -42,3 +43,4 @@
     "webpack-dev-server": "^5.2.3"
   }
 }
+
