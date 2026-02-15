@@ -19,7 +19,6 @@ export const geolocation = () => {
       const locationName = await geolocationName(latitude, longitude);
       //Проброс данных для получения прогноза,рендеринг
       await fetchWeatherByCoords(latitude, longitude, locationName);
-      console.log(latitude, longitude);
     } catch (error) {
       console.error(`Ошибка при получении геолокации : ${error.message}`);
     }

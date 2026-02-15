@@ -47,5 +47,4 @@ export const renderCurrentWeather = (weatherData, city) => {
     weatherData.sys.sunset,
   );
   updateSunPosition(sunPosition);
-  console.log(weatherData);
 };

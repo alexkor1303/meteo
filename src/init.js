@@ -1,11 +1,11 @@
-import { getGeoData } from "./src/api/geoData.js";
+import { getGeoData } from "./api/geoData.js";
 import {
   switchTheme,
   getWeatherByForm,
   geolocation,
   scrollToTop,
-} from "./src/components/index.js";
-import { renderCurrentTime } from "./src/helpers/index.js";
+} from "./components/index.js";
+import { renderCurrentTime } from "./helpers/index.js";
 
 export function initApp() {
   switchTheme();

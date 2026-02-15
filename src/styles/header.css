@@ -76,14 +76,18 @@ label {
   background-color: var(--bg-input);
   color: var(--input-text);
   outline: none;
-  transition: background-color 1s ease, border 1s ease;
+  transition:
+    background-color 1s ease,
+    border 1s ease;
 }
 
 .city-input:focus,
 .city-input:hover {
   background-color: var(--bg-input);
   color: var(--input-text);
-  transition: background-color 1s ease, color 1s ease;
+  transition:
+    background-color 1s ease,
+    color 1s ease;
 }
 
 .search-button {
@@ -94,7 +98,9 @@ label {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 1s ease, color 1s ease;
+  transition:
+    background-color 1s ease,
+    color 1s ease;
 }
 
 .search-button:hover {
@@ -117,7 +123,10 @@ label {
   margin: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 1s ease, color 1s ease, border 1s ease;
+  transition:
+    background-color 1s ease,
+    color 1s ease,
+    border 1s ease;
 }
 
 .recent-cities li {

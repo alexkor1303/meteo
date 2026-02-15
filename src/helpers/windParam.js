@@ -1,5 +1,4 @@
 export const updateWindDirection = (windDeg) => {
-  console.log(windDeg);
   const windDirectionIcon = document.getElementById("wind-direction-icon");
   const windText = document.getElementById("wind-direction-text");
   const iconRotation = (windDeg + 180) % 360;
